@@ -1,148 +1,69 @@
-# Task Manager Web Application
+# Task Manager Web App
 
-A full-stack to-do list web application built with Flask, SQLite, and Bootstrap. Users can create, edit, delete, and filter tasks, with a responsive interface and cloud deployment on Render. This project demonstrates skills in Python web development, database management, and modern web technologies.
+A simple to-do list web application built with Python and Flask. Users can add, edit, delete, and mark tasks as completed. This is my beginner project to learn full-stack web development, and it’s hosted online using Render.
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-2.3.2-green)](https://flask.palletsprojects.com/)
-## Demo
-- **Live Demo**: [Task Manager on Render](https://your-render-url.onrender.com)
-- **GitHub Repository**: [github.com/your-username/task-manager](https://github.com/your-username/task-manager)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Flask](https://img.shields.io/badge/Flask-2.3.2-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## Screenshots
-### Homepage with Task List
-![Task List](screenshots/task_list.png)
-*View and manage tasks with filtering options.*
+## About the Project
+This app lets you manage tasks easily. You can:
+- Add tasks with a title, description, priority (Low, Medium, High), and deadline.
+- Edit or delete tasks.
+- Mark tasks as done or not done.
+- View all tasks in a clean, mobile-friendly interface.
 
-### Add Task Form
-![Add Task](screenshots/add_task.png)
-*Create a new task with title, description, priority, and deadline.*
+I built this to practice Python, web development, and deploying an app online.
 
-### Edit Task Form
-![Edit Task](screenshots/edit_task.png)
-*Update existing task details.*
+## Live Demo
+- **Try it here**: [Task Manager on Render](https://your-render-url.onrender.com)
+- **GitHub**: [github.com/ranjithkumarjally/task_manager](https://github.com/ranjithkumarjally/task_manager)
 
-## Tech Stack
-- **Backend**: Python, Flask, SQLAlchemy
-- **Database**: SQLite
-- **Frontend**: HTML, CSS, Bootstrap, Jinja2
-- **JavaScript**: Vanilla JavaScript (minimal)
-- **Deployment**: Render, Gunicorn
-- **Version Control**: Git, GitHub
+## Screenshot
+![Task List](screenshots/task_list.png)  
+*The homepage shows your tasks and a form to add new ones.*
 
-## Features
-- **Task Management**:
-  - Add tasks with title (required), description (optional), priority (Low, Medium, High), and deadline (optional).
-  - Edit or delete existing tasks.
-  - Mark tasks as completed or incomplete.
-- **Filtering**: Sort tasks by priority (Low, Medium, High) or completion status (Completed, Incomplete).
-- **User Experience**:
-  - Responsive design with Bootstrap for mobile and desktop compatibility.
-  - Flash messages for feedback (e.g., "Task added successfully!").
-  - Form validation to ensure data integrity.
-- **Deployment**: Hosted on Render with a public URL, using Gunicorn for production.
-- **Modular Code**: Clean project structure with separate models, templates, and static files.
+## Technologies Used
+- **Python** and **Flask** for the backend (server).
+- **SQLite** for storing tasks.
+- **HTML**, **CSS**, and **Bootstrap** for the frontend (webpages).
+- **Render** for hosting the app online.
 
-## Installation
-Follow these steps to run the app locally.
-
-### Prerequisites
-- Python 3.8 or higher ([Download](https://www.python.org/downloads/))
-- Git ([Install](https://git-scm.com/downloads))
-- A terminal (e.g., Command Prompt, Terminal, or VS Code)
-
-### Steps
-1. **Clone the Repository**:
+## How to Run Locally
+1. **Install Python** (3.8 or higher) from [python.org](https://www.python.org/downloads/).
+2. **Clone the project**:
    ```bash
-   git clone https://github.com/your-username/task-manager.git
-   cd task-manager
+   git clone https://github.com/ranjithkumarjally/task_manager.git
+   cd task_manager
    ```
-
-2. **Set Up a Virtual Environment**:
+3. **Set up a virtual environment**:
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
-
-3. **Install Dependencies**:
+4. **Install required tools**:
    ```bash
    pip install -r requirements.txt
    ```
-
-4. **Run the App**:
+5. **Run the app**:
    ```bash
    python app.py
    ```
-
-5. **Access the App**:
-   - Open `http://127.0.0.1:5000` in a web browser.
-   - Create, edit, or filter tasks to test the app.
-
-## Usage
-- **Add a Task**: Fill out the form on the homepage with a title, optional description, priority, and deadline, then click "Add Task."
-- **Edit a Task**: Click "Edit" next to a task, update details, and save.
-- **Delete a Task**: Click "Delete" (with confirmation) to remove a task.
-- **Mark as Completed**: Click "Toggle" to change a task’s completion status.
-- **Filter Tasks**: Use the dropdowns to filter by priority or status.
-
-## Deployment
-To deploy the app to Render for a public URL:
-
-1. **Push to GitHub**:
-   - Ensure your code is in a GitHub repository.
-   - Include a `.gitignore` file to exclude `venv/` and `tasks.db`.
-
-2. **Create a Render Account**:
-   - Sign up at [render.com](https://render.com) with GitHub.
-   - Create a new Web Service and connect your repository.
-
-3. **Configure Render**:
-   - **Environment**: Python
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `gunicorn app:app`
-   - **Environment Variable**: `SECRET_KEY=your-secure-key`
-   - **Instance Type**: Free
-
-4. **Deploy**:
-   - Click "Create Web Service" to build and deploy.
-   - Access the app via the provided URL (e.g., `https://your-render-url.onrender.com`).
-
-**Note**: SQLite may reset on Render restarts. For production, consider using PostgreSQL.
+6. Open `http://127.0.0.1:5000` in a browser to use the app.
 
 ## Project Structure
-```
-task_manager/
-├── app.py                # Main Flask app with routes
-├── models/
-│   └── task.py           # Task model for database
-├── templates/
-│   ├── base.html         # Base template with layout
-│   ├── index.html        # Homepage with task list
-│   └── edit.html         # Edit task form
-├── static/
-│   ├── css/
-│   │   └── style.css     # Custom styles
-│   └── js/
-│       └── script.js     # JavaScript for interactivity
-├── requirements.txt      # Dependencies
-├── .gitignore            # Files to ignore in Git
-├── README.md             # Project documentation
-└── LICENSE               # License file
-```
+- `app.py`: Main app code.
+- `models/task.py`: Defines how tasks are stored.
+- `templates/`: HTML pages for the app.
+- `static/`: CSS and JavaScript for styling and interactivity.
+- `requirements.txt`: List of tools needed.
+- `.gitignore`: Ignores unnecessary files.
+- `LICENSE`: Project license.
 
-## Contributing
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-name`).
-3. Make changes and commit (`git commit -m "Add feature"`).
-4. Push to your fork (`git push origin feature-name`).
-5. Open a pull request with a description of your changes.
-
-Please ensure code follows PEP 8 style guidelines and includes comments.
+## License
+This project uses the MIT License. See the [LICENSE](LICENSE) file.
 
 ## Contact
-- **Name**: [Your Name]
+- **Name**: Ranjith Kumar Jally
 - **Email**: [your.email@example.com]
-- **GitHub**: [your-username](https://github.com/your-username)
-- **LinkedIn**: [your-linkedin-profile](https://linkedin.com/in/your-profile)
+- **GitHub**: [ranjithkumarjally](https://github.com/ranjithkumarjally)
 
-Feel free to reach out with questions or suggestions!
+Thanks for checking out my project!
