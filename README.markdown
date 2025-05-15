@@ -2,7 +2,7 @@
 
 A simple to-do list web application built with Python and Flask. Users can add, edit, delete, and mark tasks as completed. This is my beginner project to learn full-stack web development, and it’s hosted online using Render.
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Flask](https://img.shields.io/badge/Flask-2.3.2-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Flask](https://img.shields.io/badge/Flask-2.3.2-green)
 
 ## About the Project
 This app lets you manage tasks easily. You can:
@@ -12,10 +12,6 @@ This app lets you manage tasks easily. You can:
 - View all tasks in a clean, mobile-friendly interface.
 
 I built this to practice Python, web development, and deploying an app online.
-
-## Live Demo
-- **Try it here**: [Task Manager on Render](https://your-render-url.onrender.com)
-- **GitHub**: [github.com/ranjithkumarjally/task_manager](https://github.com/ranjithkumarjally/task_manager)
 
 ## Screenshot
 ![Task List](screenshots/task_list.png)  
@@ -56,14 +52,11 @@ I built this to practice Python, web development, and deploying an app online.
 - `static/`: CSS and JavaScript for styling and interactivity.
 - `requirements.txt`: List of tools needed.
 - `.gitignore`: Ignores unnecessary files.
-- `LICENSE`: Project license.
 
-## License
-This project uses the MIT License. See the [LICENSE](LICENSE) file.
 
 ## Contact
 - **Name**: Ranjith Kumar Jally
-- **Email**: [your.email@example.com]
+- **Email**: [iamranjithjally@gmail.com]
 - **GitHub**: [ranjithkumarjally](https://github.com/ranjithkumarjally)
 
 Thanks for checking out my project!
