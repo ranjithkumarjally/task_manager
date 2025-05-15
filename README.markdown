@@ -4,8 +4,6 @@ A full-stack to-do list web application built with Flask, SQLite, and Bootstrap.
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.3.2-green)](https://flask.palletsprojects.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
-
 ## Demo
 - **Live Demo**: [Task Manager on Render](https://your-render-url.onrender.com)
 - **GitHub Repository**: [github.com/your-username/task-manager](https://github.com/your-username/task-manager)
