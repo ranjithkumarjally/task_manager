@@ -139,9 +139,6 @@ Contributions are welcome! To contribute:
 
 Please ensure code follows PEP 8 style guidelines and includes comments.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 - **Name**: [Your Name]
 - **Email**: [your.email@example.com]
