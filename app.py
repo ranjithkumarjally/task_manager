@@ -1,17 +1,38 @@
+
+import os
 from flask import Flask, render_template, request, redirect, url_for, flash
 from datetime import datetime
 from models import db
 from models.task import Task, Priority
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
+
+# Environment-based configuration for MySQL
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+    'DATABASE_URL',
+    'mysql+pymysql://root:password@localhost:3306/taskmanager'  # Fallback for local development
+)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'your-secret-key'
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+    'pool_pre_ping': True,  # Verify connections before using
+    'pool_recycle': 3600,   # Recycle connections after 1 hour
+}
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 
 db.init_app(app)
 
 with app.app_context():
     db.create_all()
+
+# Health check endpoint for ALB
+@app.route('/health')
+def health_check():
+    try:
+        # Test database connection
+        db.session.execute(db.text('SELECT 1'))
+        return {'status': 'healthy', 'service': 'task-manager', 'database': 'connected'}, 200
+    except Exception as e:
+        return {'status': 'unhealthy', 'error': str(e)}, 503
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -123,4 +144,6 @@ def filter_tasks():
     return render_template('index.html', tasks=tasks)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=False)
+    port = int(os.environ.get('PORT', 80))
+    app.run(host='0.0.0.0', port=port, debug=False)
+
