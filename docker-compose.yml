@@ -9,7 +9,7 @@ services:
       - "80:80"
     environment:
       - DATABASE_URL=mysql+pymysql://admin:Ranjith123@my-db.c7aoqyyieltv.eu-north-1.rds.amazonaws.com:3306/taskmanager
-      - SECRET_KEY=${SECRET_KEY:-your-production-secret-key-change-this}
+      - SECRET_KEY=your-super-secret-key-change-in-production
       - FLASK_ENV=production
       - PORT=80
     restart: unless-stopped

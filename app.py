@@ -22,7 +22,12 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-i
 db.init_app(app)
 
 with app.app_context():
-    db.create_all()
+    try:
+        db.create_all()
+    except Exception as e:
+        print(f"Database tables already exist or error: {e}")
+
+
 
 # Health check endpoint for ALB
 @app.route('/health')
